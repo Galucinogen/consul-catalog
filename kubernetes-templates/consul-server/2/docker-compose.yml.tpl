@@ -36,6 +36,6 @@ consul-lb:
   tty: true
   image: rancher/load-balancer-service
   links:
-  - consul:consul-base
+  - consul-server:consul-base
   stdin_open: true
 {{- end }}
