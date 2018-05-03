@@ -18,3 +18,8 @@
       type: "string"
       required: true
       default: "eth0"
+    - variable: consul_key
+      label: "Consul Encryption Key"
+      type: "string"
+      required: true
+      default: ""
