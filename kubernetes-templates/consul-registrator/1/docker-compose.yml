@@ -8,7 +8,7 @@ consul-registrator:
   tty: true
   restart: always
   command:
-    - consul://consul:8500
+    - consul://consul.consul-registrator:8500
   log_opt: {}
   image: gliderlabs/registrator:v7
   links:
@@ -17,7 +17,6 @@ consul-registrator:
     - /var/run/docker.sock:/tmp/docker.sock
   stdin_open: true
 consul:
-  hostname: consul
   ports:
     - 8300:8300/tcp
     - 8301:8301/tcp
@@ -33,6 +32,7 @@ consul:
     io.rancher.container.pull_image: always
     io.rancher.scheduler.global: 'true'
     io.rancher.container.hostname_override: container_name
+    io.rancher.container.dns: true
   tty: true
   net: host
   restart: always
