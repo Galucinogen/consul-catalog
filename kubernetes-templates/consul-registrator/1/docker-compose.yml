@@ -15,6 +15,9 @@ consul-registrator:
     - consul
   volumes:
     - /var/run/docker.sock:/tmp/docker.sock
+    - files/server-ca.crt:
+    - files/agent_4.key:
+    - files/agent_4.crt:
   stdin_open: true
 consul:
   ports:
@@ -43,6 +46,9 @@ consul:
     - -recursor=169.254.169.250
     - -client=0.0.0.0
     - -encrypt=${consul_key}
+    - -ca-file=/tmp/server-ca.crt
+    - -client-cert=/tmp/agent_4.crt
+    - -client-key=/tmp/agent_4.key
   environment:
     CONSUL_LOCAL_CONFIG: "{\"leave_on_terminate\": true, \"datacenter\": \"${consul_datacenter}\"}"
     CONSUL_BIND_INTERFACE: ${consul_bind_interface}
@@ -51,6 +57,10 @@ consul:
   log_opt: {}
   image: consul:latest
   stdin_open: true
+  volumes:
+    - files/server-ca.crt:/tmp/server-ca.crt
+    - files/agent_4.key:/tmp/agent_4.key
+    - files/agent_4.crt:/tmp/agent_4.crt
 consul-data:
   image: consul:latest
   labels:
