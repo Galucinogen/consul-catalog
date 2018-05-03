@@ -15,9 +15,6 @@ consul-registrator:
     - consul
   volumes:
     - /var/run/docker.sock:/tmp/docker.sock
-    - files/server-ca.crt:
-    - files/agent_4.key:
-    - files/agent_4.crt:
   stdin_open: true
 consul:
   ports:
