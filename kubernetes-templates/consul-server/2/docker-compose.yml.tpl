@@ -2,7 +2,7 @@ consul-base:
   image: consul:1.0.1
   entrypoint:
     - /opt/rancher/bin/start_consul.sh
-  net: "container:consul"
+  net: "container:consul-server"
   labels:
     io.rancher.container.hostname_override: container_name
   volumes_from:
