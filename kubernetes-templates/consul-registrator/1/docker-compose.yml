@@ -11,7 +11,6 @@ consul-registrator:
     - consul://consul:8500
   log_opt: {}
   image: gliderlabs/registrator:latest
-  net: "host"
   links:
     - consul
   volumes:
