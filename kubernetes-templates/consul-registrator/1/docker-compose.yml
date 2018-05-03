@@ -48,10 +48,10 @@ consul-local:
   volumes_from:
     - consul-data
   log_opt: {}
-  image: consul:v0.6.4
+  image: consul:latest
   stdin_open: true
 consul-data:
-  image: consul:v0.6.4
+  image: consul:latest
   labels:
     io.rancher.container.hostname_override: container_name
     io.rancher.scheduler.global: 'true'

@@ -1,5 +1,5 @@
 consul-base:
-  image: consul:1.0.1
+  image: consul:latest
   entrypoint:
     - /opt/rancher/bin/start_consul.sh
   net: "container:consul"
@@ -21,7 +21,7 @@ consul-data:
     - /opt/rancher/config
   net: none
 consul:
-  image: husseingalal/consul-config:0.1.2
+  image: husseingalal/consul-config:latest
   labels:
     io.rancher.container.hostname_override: container_name
     io.rancher.sidekicks: consul-base,consul-data
