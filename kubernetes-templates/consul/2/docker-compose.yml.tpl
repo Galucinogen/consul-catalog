@@ -1,5 +1,5 @@
 consul-base:
-  image: consul:latest
+  image: consul:1.0.1
   entrypoint:
     - /opt/rancher/bin/start_consul.sh
   net: "container:consul"
