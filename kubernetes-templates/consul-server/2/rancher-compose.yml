@@ -1,5 +1,5 @@
 .catalog:
-  name: "Consul"
+  name: "Consul-Server"
   description: "Secure Consul cluster"
   version: "1.0.1-rancher1"
   uuid: consul-0
@@ -67,7 +67,7 @@
       type: "boolean"
       default: false
       required: true
-consul:
+consul-server:
   scale: 3
   metadata:
     ca.crt: |

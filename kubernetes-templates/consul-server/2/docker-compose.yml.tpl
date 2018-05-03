@@ -20,7 +20,7 @@ consul-data:
     - /opt/rancher/ssl
     - /opt/rancher/config
   net: none
-consul:
+consul-server:
   image: husseingalal/consul-config:0.1.2
   labels:
     io.rancher.container.hostname_override: container_name
