@@ -1,22 +1,22 @@
 consul-registrator:
   log_driver: ''
   labels:
-    io.rancher.sidekicks: consul,consul-data
+    io.rancher.sidekicks: consul-local,consul-data
     io.rancher.scheduler.global: 'true'
     io.rancher.container.pull_image: always
     io.rancher.container.hostname_override: container_name
   tty: true
   restart: always
   command:
-    - consul://consul:8500
+    - consul://consul-local:8500
   log_opt: {}
   image: gliderlabs/registrator:v7
   links:
-    - consul
+    - consul-local
   volumes:
     - /var/run/docker.sock:/tmp/docker.sock
   stdin_open: true
-consul:
+consul-local:
   ports:
     - 8300:8300/tcp
     - 8301:8301/tcp
