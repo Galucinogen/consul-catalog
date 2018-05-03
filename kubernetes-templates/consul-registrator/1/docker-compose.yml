@@ -8,7 +8,7 @@ consul-registrator:
   tty: true
   restart: always
   command:
-    - consul://consul.consul-registrator:8500
+    - consul://consul:8500
   log_opt: {}
   image: gliderlabs/registrator:v7
   links:
