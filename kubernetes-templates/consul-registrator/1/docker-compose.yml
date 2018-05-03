@@ -17,6 +17,7 @@ consul-registrator:
     - /var/run/docker.sock:/tmp/docker.sock
   stdin_open: true
 consul:
+  hostname: consul
   ports:
     - 8300:8300/tcp
     - 8301:8301/tcp
