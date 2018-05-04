@@ -52,7 +52,7 @@ consul:
   image: consul:latest
   stdin_open: true
   volumes:
-    - ./files:/tmp/files
+    - files_data:/tmp/files
 consul-data:
   image: consul:latest
   labels:
@@ -62,3 +62,7 @@ consul-data:
   volumes:
     - /consul/data
   entrypoint: /bin/true
+
+volumes:
+  files_data:
+      - ./files
