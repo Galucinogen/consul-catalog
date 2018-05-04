@@ -9,7 +9,6 @@ services:
   tty: true
   restart: always
   command:
-    - -internal
     - -deregister=always
     - -cleanup=true
     - -resync=5
