@@ -65,3 +65,4 @@ consul-data:
 
 volumes:
   files:
+    external: true
