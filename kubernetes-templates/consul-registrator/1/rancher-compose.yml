@@ -8,6 +8,7 @@
       label: "Consul Server Hostname/IP"
       type: "string"
       required: true
+      default: "consul.consul-cluster.rancher.internal"
     - variable: consul_datacenter
       label: "Consul Server Datacenter"
       type: "string"
@@ -22,4 +23,4 @@
       label: "Consul Encryption Key"
       type: "string"
       required: true
-      default: ""
+      default: "Zsqy0dIeov6elYIAeeusfQ=="
