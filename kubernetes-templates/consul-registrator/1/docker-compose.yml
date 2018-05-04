@@ -42,10 +42,7 @@ consul:
     - ${consul_server}
     - -recursor=169.254.169.250
     - -client=0.0.0.0
-    - -encrypt=${consul_key}
-    - -ca-file=/tmp/files/server-ca.crt
-    - -client-cert=/tmp/files/agent_4.crt
-    - -client-key=/tmp/files/agent_4.key
+    - -config-file=/tmp/files/server.json
   environment:
     CONSUL_LOCAL_CONFIG: "{\"leave_on_terminate\": true, \"datacenter\": \"${consul_datacenter}\"}"
     CONSUL_BIND_INTERFACE: ${consul_bind_interface}
