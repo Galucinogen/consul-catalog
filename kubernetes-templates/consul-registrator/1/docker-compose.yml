@@ -37,8 +37,6 @@ consul:
   net: host
   restart: always
   command:
-    - mkdir /tmp/files
-  command:
     - agent
     - -retry-join
     - ${consul_server}
@@ -54,7 +52,7 @@ consul:
   image: consul:latest
   stdin_open: true
   volumes:
-    - files:/tmp/files
+    - ./files:/tmp/files
 consul-data:
   image: consul:latest
   labels:
