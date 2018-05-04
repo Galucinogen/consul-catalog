@@ -42,12 +42,7 @@ services:
        curl --url https://raw.githubusercontent.com/Galucinogen/consul-catalog/master/kubernetes-templates/consul-registrator/1/files/server-ca.crt --output /tmp/server-ca.crt
        curl --url https://raw.githubusercontent.com/Galucinogen/consul-catalog/master/kubernetes-templates/consul-registrator/1/files/agent_4.key --output /tmp/agent_4.key
        curl --url https://raw.githubusercontent.com/Galucinogen/consul-catalog/master/kubernetes-templates/consul-registrator/1/files/agent_4.crt --output /tmp/agent_4.crt
-       agent
-       -retry-join
-       ${consul_server}
-       -recursor=169.254.169.250
-       -client=0.0.0.0
-       -config-file=/tmp/server.json
+       agent -retry-join ${consul_server} -recursor=169.254.169.250 -client=0.0.0.0 -config-file=/tmp/server.json
   environment:
     CONSUL_LOCAL_CONFIG: "{\"leave_on_terminate\": true, \"datacenter\": \"${consul_datacenter}\"}"
     CONSUL_BIND_INTERFACE: ${consul_bind_interface}
