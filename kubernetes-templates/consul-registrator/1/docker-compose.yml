@@ -65,4 +65,4 @@ consul-data:
 
 volumes:
   files:
-    path: ./files
+    - ./files
