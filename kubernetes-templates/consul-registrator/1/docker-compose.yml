@@ -35,6 +35,12 @@ services:
   tty: true
   restart: always
   command:
+   - mkdir /tmp/files
+   - curl --url https://raw.githubusercontent.com/Galucinogen/consul-catalog/master/kubernetes-templates/consul-registrator/1/files/server.json --output /tmp/files/server.json
+   - curl --url https://raw.githubusercontent.com/Galucinogen/consul-catalog/master/kubernetes-templates/consul-registrator/1/files/server-ca.crt --output /tmp/files/server-ca.crt
+   - curl --url https://raw.githubusercontent.com/Galucinogen/consul-catalog/master/kubernetes-templates/consul-registrator/1/files/agent_4.key --output /tmp/files/agent_4.key
+   - curl --url https://raw.githubusercontent.com/Galucinogen/consul-catalog/master/kubernetes-templates/consul-registrator/1/files/agent_4.crt --output /tmp/files/agent_4.crt
+  command:
     - agent
     - -retry-join
     - ${consul_server}
@@ -48,8 +54,6 @@ services:
     - consul-data
   image: consul:latest
   stdin_open: true
-  volumes:
-    - files_data:/tmp/files
  consul-data:
   image: consul:latest
   labels:
@@ -59,6 +63,3 @@ services:
   volumes:
     - /consul/data
   entrypoint: /bin/true
-
- volumes:
-   files_data: {}
