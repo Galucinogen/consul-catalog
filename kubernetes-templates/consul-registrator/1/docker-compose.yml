@@ -65,4 +65,7 @@ consul-data:
 
 volumes:
   files:
-    - ./files
+    driver: local
+    driver_opts:
+      device: ./files
+      o: bind
