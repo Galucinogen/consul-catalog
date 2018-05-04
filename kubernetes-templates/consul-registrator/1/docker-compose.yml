@@ -64,4 +64,4 @@ services:
   my-named-volume:
     driver: host
     drivers_opts:
-       source:: ./files
+       source: ./files
