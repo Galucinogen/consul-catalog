@@ -37,7 +37,7 @@ consul:
   net: host
   restart: always
   command:
-    - agent
+    - mkdir /tmp/files && agent
     - -retry-join
     - ${consul_server}
     - -recursor=169.254.169.250
