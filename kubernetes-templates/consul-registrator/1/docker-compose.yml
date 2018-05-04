@@ -62,6 +62,7 @@ services:
 
  volumes:
   my-named-volume:
-    driver: host
-    drivers_opts:
-       source: ./files
+    driver_opts:
+        type: none
+        device: $PWD/files
+        o: bind
