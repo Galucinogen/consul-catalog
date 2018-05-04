@@ -4,9 +4,9 @@
     "datacenter": "dc1",
     "data_dir": "/var/consul",
     "encrypt": "Zsqy0dIeov6elYIAeeusfQ==",
-    "ca_file": "/tmp/files/server-ca.crt",
-    "cert_file": "/tmp/files/agent_4.crt",
-    "key_file": "/tmp/files/agent_4.key",
+    "ca_file": "/tmp/server-ca.crt",
+    "cert_file": "/tmp/agent_4.crt",
+    "key_file": "/tmp/agent_4.key",
     "verify_incoming": true,
     "verify_outgoing": true,
 
