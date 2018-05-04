@@ -1,4 +1,6 @@
-consul-registrator:
+version: '2'
+services:
+ consul-registrator:
   log_driver: ''
   labels:
     io.rancher.sidekicks: consul,consul-data
@@ -52,7 +54,7 @@ consul:
   image: consul:latest
   stdin_open: true
   volumes:
-    - "files:/tmp/files"
+    - files:/tmp/files
 consul-data:
   image: consul:latest
   labels:
@@ -62,3 +64,7 @@ consul-data:
   volumes:
     - /consul/data
   entrypoint: /bin/true
+
+volumes:
+  files:
+    driver: local
