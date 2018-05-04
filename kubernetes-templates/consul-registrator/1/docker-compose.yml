@@ -64,8 +64,8 @@ consul-data:
   entrypoint: /bin/true
 
 volumes:
-  files:
-    driver: local
+    files:
     driver_opts:
+      type: none
       device: ./files
       o: bind
