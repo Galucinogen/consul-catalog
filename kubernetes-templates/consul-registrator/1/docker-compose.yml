@@ -60,8 +60,8 @@ services:
     - /consul/data
   entrypoint: /bin/true
 
+ volumes:
   my-named-volume:
-    driver_opts:
-        type: none
-       device: ./files
-       o: bind
+    driver: host
+    drivers_opts:
+       source:: ./files
