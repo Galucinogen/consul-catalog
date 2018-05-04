@@ -1,6 +1,4 @@
-version: '2'
-services:
- consul-registrator:
+consul-registrator:
   log_driver: ''
   labels:
     io.rancher.sidekicks: consul,consul-data
