@@ -9,6 +9,10 @@ services:
   tty: true
   restart: always
   command:
+    - -internal
+    - -deregister "on-success"
+    - -cleanup=true
+    - -resync=5
     - consul://consul:8500
   image: gliderlabs/registrator:latest
   links:
