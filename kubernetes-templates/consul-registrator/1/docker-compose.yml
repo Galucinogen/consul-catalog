@@ -52,7 +52,7 @@ consul:
   image: consul:latest
   stdin_open: true
   volumes:
-    - $PWD/files:/tmp/files
+    - ${PWD}/files:/tmp/files
 consul-data:
   image: consul:latest
   labels:
