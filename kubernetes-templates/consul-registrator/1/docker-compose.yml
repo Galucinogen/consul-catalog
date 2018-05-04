@@ -64,5 +64,5 @@ services:
   my-named-volume:
     driver_opts:
         type: none
-       device: ./files
+       device: ${PWD}/files
            o: bind
