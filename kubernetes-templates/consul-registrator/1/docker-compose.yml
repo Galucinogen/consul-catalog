@@ -60,7 +60,7 @@ services:
     - /consul/data
   entrypoint: /bin/true
 
- volimes:
+ volumes:
   my-named-volume:
     driver_opts:
         type: none
