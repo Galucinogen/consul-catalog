@@ -55,9 +55,9 @@ consul:
   image: consul:latest
   stdin_open: true
   volumes:
-    - files/server-ca.crt:/tmp/server-ca.crt
-    - files/agent_4.key:/tmp/agent_4.key
-    - files/agent_4.crt:/tmp/agent_4.crt
+    - ./files/server-ca.crt:/tmp/server-ca.crt
+    - ./files/agent_4.key:/tmp/agent_4.key
+    - ./files/agent_4.crt:/tmp/agent_4.crt
 consul-data:
   image: consul:latest
   labels:
