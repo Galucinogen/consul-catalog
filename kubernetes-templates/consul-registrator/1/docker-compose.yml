@@ -10,7 +10,6 @@ services:
   restart: always
   command:
     - consul://consul:8500
-  log_opt: {}
   image: gliderlabs/registrator:latest
   links:
     - consul
@@ -47,7 +46,6 @@ services:
     CONSUL_BIND_INTERFACE: ${consul_bind_interface}
   volumes_from:
     - consul-data
-  log_opt: {}
   image: consul:latest
   stdin_open: true
   volumes:
