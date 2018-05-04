@@ -1,4 +1,6 @@
-consul-registrator:
+version: "2"
+services:
+ consul-registrator:
   log_driver: ''
   labels:
     io.rancher.sidekicks: consul,consul-data
@@ -16,7 +18,7 @@ consul-registrator:
   volumes:
     - /var/run/docker.sock:/tmp/docker.sock
   stdin_open: true
-consul:
+ consul:
   ports:
     - 8300:8300/tcp
     - 8301:8301/tcp
@@ -53,7 +55,7 @@ consul:
   stdin_open: true
   volumes:
     - ./files:/tmp/files
-consul-data:
+ consul-data:
   image: consul:latest
   labels:
     io.rancher.container.hostname_override: container_name
