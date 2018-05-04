@@ -65,5 +65,4 @@ consul-data:
 
 volumes:
   files:
-    driver: local
-    path : ./files
+    path: ./files
